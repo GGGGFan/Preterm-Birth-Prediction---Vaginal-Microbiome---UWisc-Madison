@@ -56,16 +56,6 @@ def load_fts_names(path):
                 res.append(find_between(line, '"', '"'))
     return res
 
-def load_fts_names(path):
-    """
-    Load feature names from txt files and return a list of strings.
-    """
-    res = []
-    with open(path,"r") as file:
-        for line in file.readlines():
-            res.extend([t[1:-1] for t in line[line.find("]")+1:].split()])
-    return res
-
 def build_dictionaries(df_meta_tk):
     """
     Construct some mapping information
